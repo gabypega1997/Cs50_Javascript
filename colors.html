@@ -7,7 +7,20 @@
     <script>
         document.addEventListener('DOMContentLoaded', ()=>{
             const header = document.querySelector('h1')
+
+            document.querySelector('select').onchange = function() {
+                header.style.color = this.value;
+            }
+
+
+
             // const button = document.querySelectorAll('button');
+            // button.forEach(function(button) {
+            //     button.onclick = function() {
+            //         header.style.color = button.dataset.color
+            //     }
+            // })
+
             
             // button[0].addEventListener("click",(e)=>{
             //     header.style.color = e.path[0].id;
@@ -23,7 +36,20 @@
             //     header.style.background = 'blue';
             // })
 
+            // const red = document.querySelector('#red');
+            // const blue = document.querySelector('#blue');
+            // const green = document.querySelector('#green');
+
+
             
+            // document.addEventListener('click',(e)=>{
+            //     const clickedColor = e.path[0].dataset.color
+            //     if(clickedColor === "blue" || clickedColor === "red" ||clickedColor === "green" ){
+            //         header.style.color = clickedColor;
+            //     }
+            // })
+ 
+
 
 
         })
@@ -31,8 +57,11 @@
 </head>
 <body>
     <h1>Colors</h1>
-    <button id="red">Red</button>
-    <button id="blue">Blue</button>
-    <button id="green">Green</button>
+    <select>
+        <option value="black">black</option>
+        <option value="red">red</option>
+        <option value="blue">blue</option>
+        <option value="green">green</option>
+    </select>
 </body>
 </html>
