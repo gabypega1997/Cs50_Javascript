@@ -7,7 +7,9 @@
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             document.querySelector('form').onsubmit = () => {
-                document.querySelector
+                const name = document.querySelector("#name").value;
+
+                alert(`Hello ${name} !`)
             }
         })
     </script>
