@@ -12,6 +12,7 @@
             .then(data=>{
                 const rate = data.rates.EUR;
                 document.querySelector('body').innerHTML = rate;
+                console.log(rate)
             })
         });
     </script>
