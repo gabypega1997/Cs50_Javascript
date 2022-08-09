@@ -6,18 +6,32 @@
     <title>Currency Exchange</title>
     <script>
         document.addEventListener('DOMContentLoaded', function(){
+            document.querySelector('form').onsubmit = function(){
+                    fetch('https://api.exchangerate.host/latest?base=USD')
+                    .then(response =>  response.json())
+                    .then(data=>{
+                        const currency = document.querySelector("#currency").value;
+                        const rate = data.rates.EUR;
+                        console.log(rate)
+                    })
 
-            fetch('https://api.exchangerate.host/latest?base=USD')
-            .then(response =>  response.json())
-            .then(data=>{
-                const rate = data.rates.EUR;
-                document.querySelector('body').innerHTML = rate;
-                console.log(rate)
-            })
+                return false;
+            }
+
+            
         });
     </script>
 </head>
 <body>
+
+    <form>
+        <input type="text" placeholder="currency"  id="currency">
+        <input type="submit" value="Convert">
+    </form>
+
+    <div id="result">
+
+    </div>
     
 </body>
 </html>
